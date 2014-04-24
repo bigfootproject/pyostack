@@ -1,11 +1,11 @@
 from unittest import TestCase
-import openstack_api
+import pyostack
 
 
 class IdentityTests(TestCase):
     def setUp(self):
-        conf = openstack_api.init("config.ini")
-        self.identity = openstack_api.Identity(conf)
+        conf = pyostack.init("config.ini")
+        self.identity = pyostack.Identity(conf)
 
     def test_list_tenants(self):
         tenants = self.identity.list_tenants()

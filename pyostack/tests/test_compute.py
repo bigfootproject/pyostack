@@ -1,11 +1,11 @@
 from unittest import TestCase
-import openstack_api
+import pyostack
 
 
 class ComputeTests(TestCase):
     def setUp(self):
-        conf = openstack_api.init("config.ini")
-        self.compute = openstack_api.Compute(conf)
+        conf = pyostack.init("config.ini")
+        self.compute = pyostack.Compute(conf)
 
     def test_server_list(self):
         servers = self.compute.server_list()
