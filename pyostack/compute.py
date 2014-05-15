@@ -76,3 +76,9 @@ class Compute:
         '''Returns the first network list of addresses'''
         for net in instance.networks:
             return instance.networks[net]
+
+    def get_vcpu_count(self, instance):
+        '''Returns the number of VCPUs configured for an instance'''
+        flavor_id = instance.flavor["id"]
+        fl = self.nova.flavors.find(id=flavor_id)
+        return fl.vcpus
