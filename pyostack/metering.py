@@ -11,12 +11,12 @@ class Metering:
 
     def _get_creds(self, conf):
         d = {}
-        d['username'] = conf.get("environment", "OS_USERNAME")
-        d['api_key'] = conf.get("environment", "OS_PASSWORD")
-        d['auth_url'] = conf.get("environment", "OS_AUTH_URL")
-        d['project_id'] = conf.get("environment", "OS_TENANT_NAME")
+        d['os_username'] = conf.get("environment", "OS_USERNAME")
+        d['os_password'] = conf.get("environment", "OS_PASSWORD")
+        d['os_auth_url'] = conf.get("environment", "OS_AUTH_URL")
+        d['os_tenant_name'] = conf.get("environment", "OS_TENANT_NAME")
         return d
 
-    def meter_list(self, query):
+    def meter_list(self, query=None):
         return self.ceilo.meters.list()
 

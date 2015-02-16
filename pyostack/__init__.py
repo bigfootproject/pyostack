@@ -1,5 +1,6 @@
 from compute import Compute
 from identity import Identity
+from metering import Metering
 
 import ConfigParser
 import os
