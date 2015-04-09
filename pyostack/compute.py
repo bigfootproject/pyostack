@@ -82,3 +82,9 @@ class Compute:
         flavor_id = instance.flavor["id"]
         fl = self.nova.flavors.find(id=flavor_id)
         return fl.vcpus
+
+    def get_mem_size(self, instance):
+        '''Returns the number of VCPUs configured for an instance'''
+        flavor_id = instance.flavor["id"]
+        fl = self.nova.flavors.find(id=flavor_id)
+        return fl.ram * 1024 * 1024
